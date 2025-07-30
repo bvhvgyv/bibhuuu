@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Interactive Story: The Echo of Cheryl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Starry Night & Amber -->
+    <!-- Application Structure Plan: The story retains its successful six-part emotional journey. The design is elevated with a gradient background, refined typography with text shadows, and more dynamic hover/focus effects to create a more immersive and "attractive" experience as requested. The goal is to make the visual presentation as compelling as the narrative content. -->
+    <!-- Visualization & Content Choices: User images remain central. The 'Adoration' section's use of the sniper scope as a metaphor is enhanced with a glowing effect. Interactive elements are restyled with subtle glows. Unicode characters (✨, 💔) are added for emotional emphasis. The overall design aims for a premium, heartfelt feel. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a202c;
+            background-image: linear-gradient(170deg, #1a202c 0%, #12151c 100%);
+            color: #E2E8F0;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-amber {
+            color: #FBBF24;
+        }
+        .bg-amber {
+            background-color: #FBBF24;
+        }
+        .hover\:bg-amber-dark:hover {
+            background-color: #F59E0B;
+        }
+        .soundwave-bar {
+            height: 50px;
+            width: 4px;
+            background-color: #FBBF24;
+            animation: sound 1.5s ease-in-out infinite;
+            transition: background-color 0.3s;
+        }
+        .soundwave-container:hover .soundwave-bar {
+            background-color: #F59E0B;
+        }
+        @keyframes sound {
+            0% { transform: scaleY(0.1); }
+            50% { transform: scaleY(1); }
+            100% { transform: scaleY(0.1); }
+        }
+        .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .soundwave-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-glow {
+            transition: box-shadow 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .image-glow:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+        }
+        .title-shadow {
+            text-shadow: 0px 2px 15px rgba(0,0,0,0.5);
+        }
+        .button-glow {
+            transition: all 0.3s ease;
+        }
+        .button-glow:hover {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-[#1a202c]/80 backdrop-blur-sm border-b border-gray-700/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-xl font-bold text-amber">The Echo of a Promise</span>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
+                    <a href="#spark" class="hover:text-amber transition-colors">The Spark</a>
+                    <a href="#connection" class="hover:text-amber transition-colors">The Connection</a>
+                    <a href="#adoration" class="hover:text-amber transition-colors">Adoration</a>
+                    <a href="#heartbreak" class="hover:text-amber transition-colors">The Heartbreak</a>
+                    <a href="#farewell" class="hover:text-amber transition-colors">The Farewell</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="overflow-x-hidden">
+
+        <!-- Section 1: The Spark -->
+        <section id="spark" class="min-h-screen flex items-center py-20 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white title-shadow">It started with a phone call.</h1>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        It wasn’t like meeting someone new; it was like reconnecting with a part of my own soul I never knew was missing. Her laugh was a melody that made the world feel brighter. She was introduced to me, and from that moment, nothing was ever the same.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <img src="b.jpg" alt="A vintage telephone representing a life-changing call" class="rounded-lg shadow-2xl shadow-black/50 image-glow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Silence -->
+        <section id="silence" class="min-h-screen flex flex-col justify-center items-center text-center py-20 bg-black/20 fade-in-section">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white title-shadow">Then, the bridge collapsed.</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">A stupid argument created a rift. Suddenly, she was on the other side of a chasm of silence. For two days, the world lost its color. Every notification was a false alarm, a sharp jab of disappointment.</p>
+                <div class="bg-[#1a202c]/80 p-8 rounded-xl shadow-2xl w-full max-w-md mx-auto border border-gray-700 backdrop-blur-sm">
+                    <p class="text-gray-400 mb-2 text-sm">Hours of waiting...</p>
+                    <div id="wait-counter" class="text-7xl font-bold text-amber mb-6">0</div>
+                    <div id="phone-screen" class="bg-black rounded-lg p-6 h-48 flex items-center justify-center transition-all duration-500">
+                        <p id="waiting-text" class="text-gray-500">Waiting for her message...</p>
+                        <div id="message-bubble" class="hidden bg-blue-600 text-white rounded-lg px-4 py-2 max-w-xs animate-fade-in">
+                            <p class="font-semibold">Cheryl</p>
+                            <p>Hey, you okay?</p>
+                        </div>
+                    </div>
+                    <button id="wait-button" class="mt-6 w-full bg-amber text-gray-900 font-bold py-3 px-4 rounded-lg hover:bg-amber-dark transition-all duration-300 button-glow">Wait</button>
+                </div>
+                <p id="relief-text" class="text-xl text-gray-300 mt-12 opacity-0 transition-opacity duration-1000 max-w-2xl mx-auto">The relief was euphoric. A confirmation that what we had was ours. That day, I felt like I could fly.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: The Connection -->
+        <section id="connection" class="min-h-screen flex items-center py-20 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="flex justify-center order-last md:order-first">
+                     <img src="a.jpg" alt="Two game characters, Bibhu and Cheryl, standing together, ready for a match" class="rounded-lg shadow-2xl shadow-black/50 image-glow">
+                </div>
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white title-shadow">We were a team. In every sense.</h2>
+                    <p class="text-lg text-gray-300 mb-8">Our calls stretched late into the night, but our bond was forged in the digital battlefield too. We weren't just talking; we were partners. Her presence, whether through a phone speaker or as my teammate, felt more like home than any place I had ever known.</p>
+                    <div class="relative soundwave-container w-full max-w-sm flex items-center justify-center space-x-1 cursor-pointer p-4 mx-auto md:mx-0">
+                        <div class="soundwave-bar" style="animation-delay: 0s;"></div>
+                        <div class="soundwave-bar" style="animation-delay: 0.1s;"></div>
+                        <div class="soundwave-bar" style="animation-delay: 0.2s;"></div>
+                        <div class="soundwave-bar" style="animation-delay: 0.3s;"></div>
+                        <div class="soundwave-bar" style="animation-delay: 0.4s;"></div>
+                        <div class="soundwave-bar" style="animation-delay: 0.5s;"></div>
+                        <div class="tooltip absolute -top-8 bg-gray-900 text-white text-xs rounded py-1 px-2">
+                            Her voice was my anchor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Adoration -->
+        <section id="adoration" class="min-h-screen flex items-center py-20 bg-black/20 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white title-shadow"><span class="text-amber">She was the center of my world.</span> ✨</h2>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        She wasn't just a girl; she was a force of nature. The best in the world. She had this incredible way of making you feel seen, of listening not just to your words but to your soul. Loyal, brilliant, and kind beyond measure. In a world of chaos, she was my focus, my clarity. Everything else just faded away.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <img src="b.jpg" alt="A sniper scope focused on Cheryl in a game, symbolizing her as the center of focus" class="rounded-lg shadow-2xl shadow-black/50 image-glow">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Heartbreak -->
+        <section id="heartbreak" class="min-h-screen flex flex-col justify-center items-center text-center py-20 fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white title-shadow">But my reality was not hers. 💔</h2>
+                <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">My love was a desperate, all-consuming fire. Hers was a steady, committed flame, already burning for someone else. The realization was a slow, crushing weight.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                    <div class="bg-gray-800/50 p-8 rounded-xl shadow-xl border border-gray-700 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold text-white mb-3">His Reality</h3>
+                        <p class="text-gray-300">Hopelessly in love. She was the perfect woman. Every word she spoke, every laugh she shared, was a reason to fall deeper.</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-8 rounded-xl shadow-xl border border-gray-700 backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold text-white mb-3">Her Reality</h3>
+                        <p class="text-gray-300">He was a "good friend." Her heart, loyal and true, already belonged to someone else. Her kindness was genuine, but it wasn't love.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: The Farewell -->
+        <section id="farewell" class="min-h-screen flex items-center py-20 bg-black/20 fade-in-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left order-last md:order-first">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white title-shadow">The final blow: she was leaving.</h2>
+                    <p class="text-lg text-gray-400 mb-8">Each call felt like a stolen moment. The day she was to leave, we spoke for two hours. For the first time, I cried for a girl, begging her not to go.</p>
+                    <div class="bg-[#1a202c]/80 p-8 rounded-xl shadow-2xl w-full max-w-md border border-gray-700 backdrop-blur-sm">
+                        <p class="text-gray-300 leading-relaxed">My sobs were raw, but she didn't hang up. Her voice became a soft, calming balm, pampering me with a tenderness that made it both easier and harder to bear.</p>
+                        <div id="promise-container" class="mt-6 text-left opacity-0 transition-opacity duration-1000 border-l-4 border-amber pl-4 italic">
+                            <p>"In our next life," she said softly, "I’ll be yours. I promise."</p>
+                        </div>
+                         <button id="promise-button" class="mt-6 w-full bg-amber text-gray-900 font-bold py-3 px-4 rounded-lg hover:bg-amber-dark transition-all duration-300 button-glow">Listen to her promise</button>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                     <img src="a.jpg" alt="A lone figure at a train station, symbolizing departure" class="rounded-lg shadow-2xl shadow-black/50 image-glow">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 7: The Echo -->
+        <footer class="text-center py-24 bg-[#12151c] text-white fade-in-section">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12 text-white title-shadow">The Echo</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-16">
+                    <div class="p-4">
+                        <p class="text-5xl font-bold text-amber">2</p>
+                        <p class="text-sm text-gray-400">Days of Silence</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-5xl font-bold text-amber">1.5</p>
+                        <p class="text-sm text-gray-400">Months of Connection</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-5xl font-bold text-amber">2</p>
+                        <p class="text-sm text-gray-400">Hours in Farewell</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-5xl font-bold text-amber">10+</p>
+                        <p class="text-sm text-gray-400">Cigarettes in Vain</p>
+                    </div>
+                </div>
+                <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    Her promise of another life feels like a distant star—beautiful to look at, but offering no warmth. I tried to burn the memory away, but it's a ghost that lingers. And so I'm left here, with a single, burning question that defines my days.
+                </p>
+                <h3 class="text-5xl md:text-7xl font-bold mt-16 text-white title-shadow">Will I get Cheryl in this life?</h3>
+                <p class="text-sm text-gray-400 mt-4">The tears that started that night have never truly stopped.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- The Silence Section ---
+            const waitButton = document.getElementById('wait-button');
+            const waitCounter = document.getElementById('wait-counter');
+            const waitingText = document.getElementById('waiting-text');
+            const messageBubble = document.getElementById('message-bubble');
+            const reliefText = document.getElementById('relief-text');
+            let counter = 0;
+            let intervalId;
+
+            if (waitButton) {
+                waitButton.addEventListener('click', function() {
+                    this.disabled = true;
+                    this.textContent = 'Waiting...';
+                    this.classList.add('cursor-not-allowed', 'opacity-50');
+
+                    intervalId = setInterval(() => {
+                        counter++;
+                        waitCounter.textContent = counter;
+                        if (counter >= 48) {
+                            clearInterval(intervalId);
+                            waitingText.classList.add('hidden');
+                            messageBubble.classList.remove('hidden');
+                            reliefText.style.opacity = '1';
+                            this.textContent = 'Message Received';
+                        }
+                    }, 50); 
+                });
+            }
+
+            // --- The Farewell Section ---
+            const promiseButton = document.getElementById('promise-button');
+            const promiseContainer = document.getElementById('promise-container');
+            
+            if (promiseButton) {
+                promiseButton.addEventListener('click', function() {
+                    promiseContainer.style.opacity = '1';
+                    this.style.display = 'none';
+                });
+            }
+
+            // --- Scroll Animations ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
